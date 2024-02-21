@@ -1,0 +1,50 @@
+.slider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 0;
+
+  &__image-container {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    max-width: 800px;
+  }
+
+  &__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+
+  &__image--visible {
+    opacity: 1;
+  }
+
+  &__text-container {
+    margin: 1rem 0;
+    text-align: center;
+  }
+
+  &__title {
+    font-size: 1.5em;
+    font-weight: 700;
+  }
+
+  &__button {
+    border: none;
+    background-color: #e5e5e5;
+    padding: 5px 10px;
+    border-radius: 6px;
+  }
+
+  &__button-container {
+    display: flex;
+    gap: 20px;
+  }
+}

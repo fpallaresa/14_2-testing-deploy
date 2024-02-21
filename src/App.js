@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import HomePage from './pages/HomePage';
+import SlidesPage from './pages/SlidesPage';
+import { ChakraProvider, Flex } from '@chakra-ui/react';
+import { HashRouter, NavLink, Routes, Route } from 'react-router-dom';
+import './App.scss';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <HashRouter>
+        <ChakraProvider>
+          <h1>Hola Amigos</h1>
+          <Flex justifyContent='space-between' flexDirection='column' width='60%' maxWidth='500px' margin='30px auto'>
+            <NavLink to='/'>HomePage</NavLink>
+            <NavLink to='/slides'>Slides</NavLink>
+          </Flex>
+
+          <Routes>
+            <Route path='/' element={<HomePage />}></Route>
+            <Route path='/slides' element={<SlidesPage />}></Route>
+          </Routes>
+        </ChakraProvider>
+      </HashRouter>
     </div>
   );
 }
